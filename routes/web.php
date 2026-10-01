@@ -10,9 +10,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard'); 
     Route::resource('personas', PersonaController::class);
     Route::resource('intereses', InteresController::class);
     Route::get('/usuarios', [UserController::class,'index'])->name('usuarios.index');
-//});
+});

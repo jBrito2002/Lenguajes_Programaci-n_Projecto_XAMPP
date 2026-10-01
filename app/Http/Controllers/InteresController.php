@@ -28,9 +28,9 @@ class InteresController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request);
+        // CORREGIDO: Se agregó 'required|' antes de 'string'
         $request->validate([
-            'nombre' => 'string|max:255',
+            'nombre' => 'required|string|max:255',
             'descripcion' => 'nullable|string',
         ]);
         
@@ -39,7 +39,7 @@ class InteresController extends Controller
         return redirect()
         ->route('intereses.create')
         ->with('success','interes creado.');
-        }
+    }
 
     /**
      * Display the specified resource.

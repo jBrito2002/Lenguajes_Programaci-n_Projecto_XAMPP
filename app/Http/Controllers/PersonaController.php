@@ -22,7 +22,8 @@ class PersonaController extends Controller
     public function create()
     {
         $intereses = Interes::all();
-        return view('persona.create', compact('intereses'));
+        // CORREGIDO: Cambiado de 'persona.create' a 'personas.create'
+        return view('personas.create', compact('intereses'));
     }
 
     /**
@@ -43,7 +44,7 @@ class PersonaController extends Controller
         }
 
         return redirect()->route('personas.create')->with('success','Persona creada correctamente.');
-}
+    }
 
     /**
      * Display the specified resource.

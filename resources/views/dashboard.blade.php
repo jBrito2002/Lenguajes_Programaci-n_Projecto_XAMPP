@@ -1,7 +1,7 @@
 @extends('layouts.plantilla')
 @section('content')
     <h1 class="text-3xl font-bold">
-       
+        ¡Bienvenido, {{ Auth::user()->name }}!
     </h1>
     <p class="text-gray-600 mt-2">Panel de control de EjemploSeg</p>
 

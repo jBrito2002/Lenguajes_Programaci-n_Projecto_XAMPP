@@ -9,10 +9,13 @@ class Interes extends Model
 {
     use HasFactory;
 
+    
+    protected $table = 'intereses';
+
     protected $fillable = ['nombre', 'descripcion'];
 
     public function personas()
     {
         return $this->belongsToMany(Persona::class); 
     }
-} 
+}
