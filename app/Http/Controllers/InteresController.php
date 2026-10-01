@@ -20,7 +20,7 @@ class InteresController extends Controller
      */
     public function create()
     {
-        //
+        return view ('intereses.create');
     }
 
     /**
@@ -28,8 +28,18 @@ class InteresController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        //dd($request);
+        $request->validate([
+            'nombre' => 'string|max:255',
+            'descripcion' => 'nullable|string',
+        ]);
+        
+        Interes::create($request->all());
+
+        return redirect()
+        ->route('intereses.create')
+        ->with('success','interes creado.');
+        }
 
     /**
      * Display the specified resource.
